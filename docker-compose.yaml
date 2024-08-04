@@ -2,6 +2,7 @@ version: '3'
 
 services:
   nginx:
+    image: brunomeloesilva/nginx:latest
     build:
       context: ./nginx
       dockerfile: Dockerfile
@@ -16,6 +17,7 @@ services:
         condition: service_started
 
   app:
+    image: brunomeloesilva/app:latest
     build:
       context: ./node
       dockerfile: Dockerfile
@@ -30,7 +32,6 @@ services:
     depends_on:
       db:
         condition: service_healthy
-    command: npm init -y
 
   db:
     image: mysql:5.7

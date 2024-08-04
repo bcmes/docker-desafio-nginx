@@ -1,11 +1,11 @@
-FROM node:15
+FROM node:20.5.0
 
 WORKDIR /app
 
 COPY . .
 
-EXPOSE 3000
+RUN npm install --save
 
-RUN npm install express --save
+EXPOSE 3000
 
 ENTRYPOINT ["node","app.js"]
