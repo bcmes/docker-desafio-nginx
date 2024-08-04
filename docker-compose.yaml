@@ -28,6 +28,7 @@ services:
     depends_on:
       db:
         condition: service_healthy
+    entrypoint: ["node","app.js"]
 
   db:
     image: mysql:5.7

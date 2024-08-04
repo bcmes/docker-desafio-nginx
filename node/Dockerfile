@@ -15,5 +15,3 @@ COPY --chown=node:node . .
 USER node
 
 EXPOSE 3000
-
-ENTRYPOINT ["node","app.js"]
