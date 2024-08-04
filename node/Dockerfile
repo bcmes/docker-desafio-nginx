@@ -6,4 +6,6 @@ COPY . .
 
 EXPOSE 3000
 
+RUN npm install express --save
+
 ENTRYPOINT ["node","app.js"]
