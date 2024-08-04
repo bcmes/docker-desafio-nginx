@@ -24,8 +24,6 @@ services:
     container_name: app
     networks:
       - my-net
-    # volumes:
-    #   - ./node:/home/node/app
     tty: true
     depends_on:
       db:
