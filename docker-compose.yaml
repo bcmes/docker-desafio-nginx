@@ -24,11 +24,9 @@ services:
     container_name: app
     networks:
       - my-net
-    volumes:
-      - ./node:/app
+    # volumes:
+    #   - ./node:/home/node/app
     tty: true
-    ports:
-      - "3000:3000"
     depends_on:
       db:
         condition: service_healthy
