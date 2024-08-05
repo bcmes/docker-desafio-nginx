@@ -28,7 +28,8 @@ services:
     depends_on:
       db:
         condition: service_healthy
-    entrypoint: ["node","app.js"]
+    volumes:
+      - ./node:/home/node/app
 
   db:
     image: mysql:5.7
