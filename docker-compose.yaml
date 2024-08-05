@@ -28,6 +28,9 @@ services:
     depends_on:
       db:
         condition: service_healthy
+    volumes:
+      - ./node:/home/node/app
+      - /home/node/app
 
   db:
     image: mysql:5.7
