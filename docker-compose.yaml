@@ -28,9 +28,9 @@ services:
     depends_on:
       db:
         condition: service_healthy
-    volumes:
+    entrypoint: sh -c "npm install && node app.js" # depois executa este comando, por isso dá certo !
+    volumes: # Faz a copia entre 'volumes' primeir
       - ./node:/home/node/app
-      - /home/node/app/node_modules
 
   db:
     image: mysql:5.7
@@ -40,6 +40,7 @@ services:
     tty: true
     volumes:
       - ./mysql:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     environment:
       - MYSQL_DATABASE=nodedb
       - MYSQL_ROOT_PASSWORD=root

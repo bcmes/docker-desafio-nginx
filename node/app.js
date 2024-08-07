@@ -12,11 +12,11 @@ const config = {
 const mysql = require('mysql')
 const connection = mysql.createConnection(config)
 
-connection.query("DROP TABLE IF EXISTS people")
-connection.query("CREATE TABLE people (name VARCHAR(255))")
-connection.query(`INSERT INTO people(name) values('Wesley')`)
-connection.query(`INSERT INTO people(name) values('Bruno')`)
-connection.query(`INSERT INTO people(name) values('Marone')`)
+// connection.query("DROP TABLE IF EXISTS people")
+// connection.query("CREATE TABLE people (name VARCHAR(255))")
+// connection.query(`INSERT INTO people(name) values('Wesley')`)
+// connection.query(`INSERT INTO people(name) values('Bruno')`)
+// connection.query(`INSERT INTO people(name) values('Marone')`)
 
 getPeople(function(result){
     app.get('/', (req, res) => {
